@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간 트래커</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+</head>
+<body>
+    <div id="app-wrapper">
+        <header>
+            <div class="header-left">
+                <span class="logo">시간 트래커</span>
+            </div>
+            <div class="header-right">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+        </header>
+
+        <div id="app-container">
+            <main>
+                <div class="main-header">
+                    <h2>실시간 진행률</h2>
+                    <p>실시간으로 시간이 지나가는 것을 확인하세요.</p>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab-button active">전체</button>
+                </div>
+
+                <div class="list-container">
+                    <div class="list-item">
+                        <div class="item-name">
+                            <span>☀️</span>
+                            <p>오늘</p>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="day-progress-bar"></div>
+                        </div>
+                        <div class="item-value" id="day-percentage">0.000000%</div>
+                        <div class="item-time-left" id="day-left"></div>
+                    </div>
+                    <div class="list-item">
+                        <div class="item-name">
+                             <span>📅</span>
+                            <p>이번 주</p>
+                        </div>
+                         <div class="progress-bar-container">
+                            <div class="progress-bar" id="week-progress-bar"></div>
+                        </div>
+                        <div class="item-value" id="week-percentage">0.000000%</div>
+                        <div class="item-time-left" id="week-left"></div>
+                    </div>
+                    <div class="list-item">
+                        <div class="item-name">
+                            <span>🗓️</span>
+                            <p>이번 달</p>
+                        </div>
+                         <div class="progress-bar-container">
+                            <div class="progress-bar" id="month-progress-bar"></div>
+                        </div>
+                        <div class="item-value" id="month-percentage">0.000000%</div>
+                        <div class="item-time-left" id="month-left"></div>
+                    </div>
+                     <div class="list-item">
+                        <div class="item-name">
+                            <span>🎇</span>
+                            <p>올해</p>
+                        </div>
+                         <div class="progress-bar-container">
+                            <div class="progress-bar" id="year-progress-bar"></div>
+                        </div>
+                        <div class="item-value" id="year-percentage">0.000000%</div>
+                        <div class="item-time-left" id="year-left"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html>
