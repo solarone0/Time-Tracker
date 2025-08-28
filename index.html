@@ -9,15 +9,6 @@
 </head>
 <body>
     <div id="app-wrapper">
-        <header>
-            <div class="header-left">
-                <span class="logo">시간 트래커</span>
-            </div>
-            <div class="header-right">
-                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </div>
-        </header>
-
         <div id="app-container">
             <main>
                 <div class="main-header">
@@ -30,49 +21,73 @@
                 </div>
 
                 <div class="list-container">
-                    <div class="list-item">
-                        <div class="item-name">
-                            <span>☀️</span>
-                            <p>오늘</p>
+                    <div class="list-item" id="day-item">
+                        <div class="item-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="day-details">
+                           <div class="item-name">
+                                <span>☀️</span>
+                                <p>오늘</p>
+                            </div>
+                            <div class="item-stats">
+                                <div class="item-value" id="day-percentage">0.000000%</div>
+                                <div class="item-time-left" id="day-left"></div>
+                            </div>
+                           <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </div>
                         <div class="progress-bar-container">
                             <div class="progress-bar" id="day-progress-bar"></div>
                         </div>
-                        <div class="item-value" id="day-percentage">0.000000%</div>
-                        <div class="item-time-left" id="day-left"></div>
+                        <div class="item-details" id="day-details" role="region"></div>
                     </div>
-                    <div class="list-item">
-                        <div class="item-name">
-                             <span>📅</span>
-                            <p>이번 주</p>
+                     <div class="list-item" id="week-item">
+                        <div class="item-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="week-details">
+                           <div class="item-name">
+                                <span>📅</span>
+                                <p>이번 주</p>
+                            </div>
+                            <div class="item-stats">
+                                <div class="item-value" id="week-percentage">0.000000%</div>
+                                <div class="item-time-left" id="week-left"></div>
+                            </div>
+                           <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </div>
-                         <div class="progress-bar-container">
+                        <div class="progress-bar-container">
                             <div class="progress-bar" id="week-progress-bar"></div>
                         </div>
-                        <div class="item-value" id="week-percentage">0.000000%</div>
-                        <div class="item-time-left" id="week-left"></div>
+                        <div class="item-details" id="week-details" role="region"></div>
                     </div>
-                    <div class="list-item">
-                        <div class="item-name">
-                            <span>🗓️</span>
-                            <p>이번 달</p>
+                    <div class="list-item" id="month-item">
+                        <div class="item-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="month-details">
+                           <div class="item-name">
+                                <span>🗓️</span>
+                                <p>이번 달</p>
+                            </div>
+                            <div class="item-stats">
+                                <div class="item-value" id="month-percentage">0.000000%</div>
+                                <div class="item-time-left" id="month-left"></div>
+                            </div>
+                           <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </div>
-                         <div class="progress-bar-container">
+                        <div class="progress-bar-container">
                             <div class="progress-bar" id="month-progress-bar"></div>
                         </div>
-                        <div class="item-value" id="month-percentage">0.000000%</div>
-                        <div class="item-time-left" id="month-left"></div>
+                        <div class="item-details" id="month-details" role="region"></div>
                     </div>
-                     <div class="list-item">
-                        <div class="item-name">
-                            <span>🎇</span>
-                            <p>올해</p>
+                     <div class="list-item" id="year-item">
+                        <div class="item-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="year-details">
+                           <div class="item-name">
+                                <span>🎇</span>
+                                <p>올해</p>
+                            </div>
+                            <div class="item-stats">
+                                <div class="item-value" id="year-percentage">0.000000%</div>
+                                <div class="item-time-left" id="year-left"></div>
+                            </div>
+                           <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </div>
-                         <div class="progress-bar-container">
+                        <div class="progress-bar-container">
                             <div class="progress-bar" id="year-progress-bar"></div>
                         </div>
-                        <div class="item-value" id="year-percentage">0.000000%</div>
-                        <div class="item-time-left" id="year-left"></div>
+                        <div class="item-details" id="year-details" role="region"></div>
                     </div>
                 </div>
             </main>
@@ -84,54 +99,75 @@
          * SPDX-License-Identifier: Apache-2.0
          */
 
-        // Function to update the progress displays
+        const blockCache = { day: false, week: false, month: false, year: false };
+
         function updateProgress() {
             const now = new Date();
 
-            // --- Daily Progress ---
+            // --- Calculations ---
             const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
             const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-            const dayTotalMilliseconds = endOfDay.getTime() - startOfDay.getTime();
-            const dayElapsedMilliseconds = now.getTime() - startOfDay.getTime();
+            const dayTotalMilliseconds = endOfDay - startOfDay;
+            const dayElapsedMilliseconds = now - startOfDay;
             const dayPercentage = (dayElapsedMilliseconds / dayTotalMilliseconds) * 100;
             const dayTimeLeft = dayTotalMilliseconds - dayElapsedMilliseconds;
-            
-            // --- Weekly Progress ---
-            const dayOfWeek = now.getDay(); // Sunday = 0, Monday = 1, etc.
+
+            const dayOfWeek = now.getDay();
             const startOfWeek = new Date(now);
-            startOfWeek.setDate(now.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1)); // Adjust to make Monday the start
+            startOfWeek.setDate(now.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1));
             startOfWeek.setHours(0, 0, 0, 0);
             const endOfWeek = new Date(startOfWeek);
             endOfWeek.setDate(startOfWeek.getDate() + 7);
-            const weekTotalMilliseconds = endOfWeek.getTime() - startOfWeek.getTime();
-            const weekElapsedMilliseconds = now.getTime() - startOfWeek.getTime();
+            const weekTotalMilliseconds = endOfWeek - startOfWeek;
+            const weekElapsedMilliseconds = now - startOfWeek;
             const weekPercentage = (weekElapsedMilliseconds / weekTotalMilliseconds) * 100;
             const weekTimeLeft = weekTotalMilliseconds - weekElapsedMilliseconds;
 
-            // --- Monthly Progress ---
             const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
             const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-            const monthTotalMilliseconds = endOfMonth.getTime() - startOfMonth.getTime();
-            const monthElapsedMilliseconds = now.getTime() - startOfMonth.getTime();
+            const monthTotalMilliseconds = endOfMonth - startOfMonth;
+            const monthElapsedMilliseconds = now - startOfMonth;
             const monthPercentage = (monthElapsedMilliseconds / monthTotalMilliseconds) * 100;
             const monthTimeLeft = monthTotalMilliseconds - monthElapsedMilliseconds;
 
-            // --- Yearly Progress ---
             const startOfYear = new Date(now.getFullYear(), 0, 1);
             const endOfYear = new Date(now.getFullYear() + 1, 0, 1);
-            const yearTotalMilliseconds = endOfYear.getTime() - startOfYear.getTime();
-            const yearElapsedMilliseconds = now.getTime() - startOfYear.getTime();
+            const yearTotalMilliseconds = endOfYear - startOfYear;
+            const yearElapsedMilliseconds = now - startOfYear;
             const yearPercentage = (yearElapsedMilliseconds / yearTotalMilliseconds) * 100;
             const yearTimeLeft = yearTotalMilliseconds - yearElapsedMilliseconds;
 
+            // Block data calculations
+            const blocksData = {
+                day: {
+                    total: 24,
+                    filled: now.getHours() + 1,
+                    grid: 'repeat(12, 1fr)'
+                },
+                week: {
+                    total: 7,
+                    filled: dayOfWeek === 0 ? 7 : dayOfWeek,
+                    grid: 'repeat(7, 1fr)'
+                },
+                month: {
+                    total: new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate(),
+                    filled: now.getDate(),
+                    grid: 'repeat(7, 1fr)'
+                },
+                year: {
+                    total: 12,
+                    filled: now.getMonth() + 1,
+                    grid: 'repeat(6, 1fr)'
+                }
+            };
+            
             // --- Update UI ---
-            updateElement('day', dayPercentage, dayTimeLeft);
-            updateElement('week', weekPercentage, weekTimeLeft);
-            updateElement('month', monthPercentage, monthTimeLeft);
-            updateElement('year', yearPercentage, yearTimeLeft);
+            updateElement('day', dayPercentage, dayTimeLeft, blocksData.day);
+            updateElement('week', weekPercentage, weekTimeLeft, blocksData.week);
+            updateElement('month', monthPercentage, monthTimeLeft, blocksData.month);
+            updateElement('year', yearPercentage, yearTimeLeft, blocksData.year);
         }
 
-        // Helper function to format remaining time
         function formatTimeLeft(ms, period) {
             if (ms < 0) return '';
             const totalSeconds = Math.floor(ms / 1000);
@@ -139,30 +175,63 @@
             const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
             const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
             const seconds = Math.floor(totalSeconds % 60);
-
             const pad = (num) => num.toString().padStart(2, '0');
             const timeString = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-
-            if (period === 'day') {
-                return timeString;
-            }
-            return `${days}일 ${timeString}`;
+            return period === 'day' ? timeString : `${days}일 ${timeString}`;
         }
 
-        // Helper function to update a specific progress element
-        function updateElement(id, percentage, timeLeftMs) {
+        function updateElement(id, percentage, timeLeftMs, blockData) {
             const percentageEl = document.getElementById(`${id}-percentage`);
             const progressBarEl = document.getElementById(`${id}-progress-bar`);
             const timeLeftEl = document.getElementById(`${id}-left`);
+            const detailsContainer = document.getElementById(`${id}-details`);
+
+            if (percentageEl) percentageEl.textContent = `${percentage.toFixed(6)}%`;
+            if (progressBarEl) progressBarEl.style.width = `${percentage}%`;
+            if (timeLeftEl) timeLeftEl.textContent = `남음: ${formatTimeLeft(timeLeftMs, id)}`;
             
-            if (percentageEl && progressBarEl && timeLeftEl) {
-                percentageEl.textContent = `${percentage.toFixed(6)}%`;
-                progressBarEl.style.width = `${percentage}%`;
-                timeLeftEl.textContent = `남음: ${formatTimeLeft(timeLeftMs, id)}`;
+            if (detailsContainer) {
+                if (!blockCache[id]) {
+                    const fragment = document.createDocumentFragment();
+                    for (let i = 0; i < blockData.total; i++) {
+                        const block = document.createElement('div');
+                        block.classList.add('block');
+                        fragment.appendChild(block);
+                    }
+                    detailsContainer.style.gridTemplateColumns = blockData.grid;
+                    detailsContainer.appendChild(fragment);
+                    blockCache[id] = true;
+                }
+
+                const blocks = detailsContainer.children;
+                for (let i = 0; i < blocks.length; i++) {
+                    if (i < blockData.filled) {
+                        blocks[i].classList.add('filled');
+                    } else {
+                        blocks[i].classList.remove('filled');
+                    }
+                }
             }
         }
 
-        // Initial call and set interval to update every 100 milliseconds for a smooth feel
+        document.querySelectorAll('.item-summary').forEach(summary => {
+            const item = summary.closest('.list-item');
+            const details = item.querySelector('.item-details');
+            
+            const toggle = () => {
+                const isExpanded = item.classList.toggle('expanded');
+                summary.setAttribute('aria-expanded', isExpanded);
+            };
+
+            summary.addEventListener('click', toggle);
+            summary.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggle();
+                }
+            });
+        });
+
         updateProgress();
         setInterval(updateProgress, 100);
     </script>

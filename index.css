@@ -83,19 +83,33 @@ main {
     background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0;
 }
 
 .list-item {
-    display: grid;
-    grid-template-columns: 120px 1fr 140px 160px;
-    align-items: center;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     border-bottom: 1px solid var(--border-color);
 }
+
 .list-item:last-child {
     border-bottom: none;
+}
+
+.item-summary {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.item-summary:focus-visible {
+    outline: 2px solid var(--progress-bar-color);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 .item-name {
@@ -111,12 +125,17 @@ main {
     font-size: 1.1rem;
 }
 
+.item-stats {
+    text-align: right;
+}
+
 .progress-bar-container {
     width: 100%;
     height: 8px;
     background-color: var(--border-color);
     border-radius: 4px;
     overflow: hidden;
+    margin-top: 0.75rem;
 }
 
 .progress-bar {
@@ -128,25 +147,53 @@ main {
 }
 
 .item-value {
-    text-align: right;
     font-weight: 600;
     font-size: 1.1rem;
     font-variant-numeric: tabular-nums;
 }
 
 .item-time-left {
-    text-align: right;
     color: var(--secondary-text-color);
     font-size: 1rem;
     font-weight: 500;
     font-variant-numeric: tabular-nums;
 }
 
-
-/* Responsive Design */
-@media (max-width: 900px) {
+.chevron-icon {
+    transition: transform 0.3s ease-in-out;
+    color: var(--secondary-text-color);
 }
 
+.list-item.expanded .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.item-details {
+    display: grid;
+    gap: 4px;
+    margin-top: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.list-item.expanded .item-details {
+    max-height: 500px; /* Adjust as needed */
+}
+
+.block {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--border-color);
+    border-radius: 2px;
+}
+
+.block.filled {
+    background-color: var(--progress-bar-color);
+}
+
+
+/* Responsive Design */
 @media (max-width: 600px) {
     #app-wrapper {
         padding: 0;
@@ -162,9 +209,10 @@ main {
         font-size: 0.9rem;
     }
     .list-item {
-        grid-template-columns: 80px 1fr auto auto;
-        gap: 0.5rem;
         padding: 0.75rem;
+    }
+    .item-summary {
+        gap: 0.5rem;
     }
     .item-name p {
         font-size: 1rem;
